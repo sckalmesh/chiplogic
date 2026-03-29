@@ -120,10 +120,9 @@
         }
 
         .header {
-            background: var(--brand-dark);
-            padding: 40px;
+            background: linear-gradient(135deg, #111827, #1f2937); /* dark neutral */
+            padding: 30px;
             color: #ffffff;
-            text-align: left;
             position: relative;
         }
 
@@ -134,7 +133,7 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: var(--brand-blue);
+            background: #f97316; /* 🔥 ORANGE */
         }
 
         .header h1 {
@@ -167,6 +166,11 @@
         input, select, textarea {
             width: 100%;
             max-width: 100%;   /* 🔥 prevents overflow */
+        }
+
+        :root {
+            --brand-blue: #f97316;   /* 🔥 replace blue with orange */
+            --brand-hover: #ea580c;
         }
 
         /* --- METADATA SECTION --- */
@@ -346,15 +350,122 @@
             border: 2px solid var(--border);
             margin-top: 10px;
         }
+
+        /* Header layout */
+        .header-inner {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Logo */
+        .logo {
+            height: 42px;
+            background: white;
+            padding: 4px;
+            border-radius: 6px;
+        }
+
+        /* Text */
+        .header-text h1 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .header-text p {
+            margin: 4px 0 0;
+            font-size: 13px;
+            color: #d1d5db;
+        }
+
+        @media (max-width: 600px) {
+
+        .header-inner {
+            flex-direction: column;   /* 🔥 STACK */
+            align-items: flex-start;  /* left align */
+        }
+
+        .logo {
+            height: 36px;
+        }
+
+        .header-text h1 {
+            font-size: 18px;
+        }
+
+        .header-text p {
+            font-size: 12px;
+        }
+    }
+     .header {
+        overflow: hidden;
+        }
+
+    .header-inner {
+            display: flex;
+            flex-direction: column;   /* 🔥 STACK EVERYTHING */
+            align-items: flex-start;  /* left aligned */
+            gap: 6px;
+        }
+
+        /* Logo */
+        .logo {
+            height: 42px;
+            background: white;
+            padding: 4px;
+            border-radius: 6px;
+        }
+
+        /* Title */
+        .header h1 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* Subtitle */
+        .subtitle {
+            margin: 0;
+            font-size: 13px;
+            color: #d1d5db;
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                height: 36px;
+            }
+
+            .header h1 {
+                font-size: 18px;
+            }
+
+            .subtitle {
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
 
 <div class="report-container">
     <div class="header">
+    <div class="header-inner">
+
+        <!-- LOGO -->
+        <img src="chip_logo.png" alt="Chiplogic Logo" class="logo">
+
+        <!-- TITLE -->
         <h1>CHIPLOGIC</h1>
-        <p>Technical Site Audit & Quality Assurance Portal</p>
+
+        <!-- SUBTITLE -->
+        <p class="subtitle">
+            Technical Site Audit & Quality Assurance Portal
+        </p>
+
     </div>
+</div>
 
     <div class="content">
         <div class="metadata-grid">
@@ -628,5 +739,4 @@ window.onload = () => { addRow(); };
 
 </body>
 </html>
-
 
